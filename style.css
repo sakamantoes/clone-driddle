@@ -1,0 +1,275 @@
+/* local fonts */
+
+@font-face {
+    font-family: "mona-sans";
+    src: url("./assets/fonts/mona-sans/Mona-Sans.woff");
+}
+
+.source-serif {
+    font-family: "Source Serif 4", serif;
+}
+
+
+:root {
+    --hero-skin: #f8f7f4;
+    --nav-font: 15.3px;
+    --nav-line-h: 50px;
+}
+
+/* default page styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* custom stylings */
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background: #ccccccd7;
+}
+
+button {
+    appearance: none;
+    border: none;
+    outline:none;
+    background: none;
+    cursor: pointer;
+}
+/* custom stylings */
+
+
+/* style our hero */
+
+.hero {
+    background: var(--hero-skin);
+    /* max-width: this is how far you can go before you stop */
+    /* max-width: 2500px; */
+    width: 100%;
+    /* height: 100%; */
+    min-height: 500px;
+
+    font-family: "mona-sans";
+}
+/* style our hero */
+
+
+
+/* style nav bar */
+
+.nav-container {
+    padding: 0 2rem;
+    padding-top: 1rem;
+    width: 100%;
+    min-width: 345px;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-left {
+    width: 50.333%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.nav-left ul {
+    list-style: none;
+    display: flex;
+    gap: 1.2rem;
+}
+
+.nav-left ul .nav-item {
+    /* background: #000; */
+    line-height: var(--nav-line-h);
+    font-weight: 600;
+    font-size: var(--nav-font);
+    cursor: pointer;
+}
+
+.nav-left .dropdown > .dropdown-btn {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+}
+
+/* style dropdown */
+.dropdown {
+    position: relative;
+}
+
+
+.drop-menu {
+    width:  239px;
+    min-height: 100px;
+    overflow: hidden;
+    background: #fff;
+
+    position: absolute;
+    left: 0;
+    padding: 1.4rem;
+
+    box-shadow: 0px 0px 0px 0px rgba(13,12,34,0.02), 0px 18px 39px 0px rgba(13,12,34,0.02), 0px 71px 71px 0px rgba(13,12,34,0.02), 0px 159px 95px 0px rgba(13,12,34,0.01), 0px 283px 113px 0px rgba(13,12,34,0), 0px 442px 124px 0px rgba(13,12,34,0);
+    border-radius: 15px;
+
+    opacity: 0; /* hiding the drop menu here */
+    pointer-events: none; /* this is the dropdown trick !!! */
+}
+
+
+.drop-menu ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.drop-item >  h3, p{
+    line-height: 20px;
+    font-weight: lighter;
+}
+
+.drop-item h3 {
+    color: #0d0c22de;
+    font-size: 14px;
+}
+
+.drop-item > p {
+    color: #0d0c22;
+    font-size: 11.8px;
+
+}
+
+
+/* styling right nav */
+.nav-right {
+    display: flex;
+    gap: 1.3rem;
+    align-items: center;
+}
+
+.nav-right .input-control  {
+    background: #fff;
+    /* position: relative; */
+    display: flex;
+    align-items: center;
+    border-radius: 40px;
+    gap: .5rem;
+}
+.input-control input {
+    appearance: none;
+    border: none;
+    outline: none;
+    background: transparent;
+    height: 40px;
+    font-size: var(--nav-font);
+}
+.input-control span {
+    display: block;
+    width: 35px;
+    height: 45px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    color: #6e6d7a;
+}
+
+.search-btn {
+    display: none;
+    line-height: var(--nav-line-h);
+}
+
+.auth-btn {
+    line-height: var(--nav-line-h);
+}
+
+.auth-btn a:nth-child(1){
+    margin-right: 1rem;
+    font-size: var(--nav-font);
+    font-weight: 500;
+}
+
+.auth-btn a:nth-child(2){
+    background: black;
+    padding: .8rem 1.2rem;
+    border-radius: 45px;
+    color: #fff;
+    font-size: var(--nav-font);
+    font-weight: 500;
+}
+
+
+/* Effect */
+.dribble-logo:hover,
+.nav-left ul >  .nav-item:hover .dropdown-btn, .nav-item:hover a {
+    opacity: .7; 
+    transition: .5s opacity;
+}
+
+.dribble-logo:hover,
+.nav-left ul .nav-item:hover .drop-menu{
+    opacity: 1;
+    pointer-events: all;
+    transition: .5s all;
+
+}
+
+.nav-left .dropdown>.dropdown-btn:hover span:nth-child(2) {
+    transform: rotate(180deg);
+    transition: .5s transform;
+}
+
+/* auth inputs */
+.nav-right .input-control:hover  {
+    outline: 3px solid rgba(255, 30, 0, 0.096);
+}
+
+.auth-btn a:nth-child(2):hover {
+    background: rgba(0, 0, 0, 0.76);
+    transition: .3s background;
+}
+
+/* Effects ends here */
+
+
+@media screen and (max-width: 1392px) {
+    .nav-left {
+        --nav-font: 13px;
+        flex-direction: row-reverse;
+        justify-content: start;
+        align-items: center;
+        gap: 2rem;
+
+        width: fit-content;
+    }
+}
+
+
+
+@media screen and (max-width: 1050px) {
+    .search-btn {display: block;}
+    .nav-right form {display: none;}
+}
+
+
+
+@media screen and (max-width: 944px) { 
+    .nav-left ul {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) { 
+    .nav-container {
+        padding: 0 1rem;
+        padding-top: 1.3rem;
+    }
+}
