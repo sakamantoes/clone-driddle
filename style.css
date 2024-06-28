@@ -272,7 +272,7 @@ button {
     display: flex;
     gap: 2rem;
     align-items: center;
-    animation: trail-image 30s linear  infinite;
+    animation: trail-image 10s linear  infinite;
 }
 .image-box {
     position: relative;
@@ -371,16 +371,19 @@ button {
 
 
 @keyframes trail-image{
-    0% { 
-        transform: translateX(10%)
+    /* 0% { 
+        transform: translateX(2.3rem)
     }
+    100% {
+        transform: translateX(calc(-340px * 8 + 2rem));
+    } */
 
     50% { 
         transform: translateX(-120%)
     }
 
     100% { 
-        transform: translateX(calc(-220%))
+        transform: translateX(calc(-200%))
     }
 }
 
